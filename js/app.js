@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
    
     $('#btn').on('click',addItem);
@@ -7,28 +6,39 @@ $(document).ready(function(){
     
     function addItem(){
         var input= $('#input').val();
-        $('#tlist').append('<li><input class="complete" type="checkbox">' + input + '<span class="fas fa- trash"</span></ li>');
-         $('#input').val("");    
+        if(input ==="")
+             {
+                 alert("Must enter some task!");
+             }
+        else{ 
+                $('#tlist').append('<li><input class="complete" type="checkbox">' + input + '<button class="remove"><span class="fas fa-trash"></span></button></li>');
+                 $('#input').val(""); 
+            }
+            
     }
     function removeItem()
     {
         $(this).parent().remove();
+        alert("Item deleted");
     }
     
     function completeItem()
     {
-        $(this).parent().toggleClass('done');
+        $(this).parent().toggleClass('checked');
     }
-  });
-/*
+  })
+  
+  /*
+
 document.getElementById('btn').addEventListener('click',function(){
  var value=document.getElementById('input').value;
     if(value){
         
     }
     
-});
+})
 
+/*
 
     var form=document.getElementById("form");
     var input=document.getElementById("input");
