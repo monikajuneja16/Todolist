@@ -34,24 +34,26 @@
       <div class ="container">
           <h1 class="text-center display-2">Todo List</h1>
         <div class ="row">
-          <form id="form" class="col-8 mx-auto">
-      <div class="input-group">
-        
-        <input id="input" class="form-control" placeholder="Enter Tasks">
-          <span> <button id="btn" type="button" class="btn btn-primary">Submit</button></span>
-       
-              </div>  
-    </form>
+          
+        <form class="form col-8 mx-auto">
+            <div class="input-group">
+            <input id="input" class="form-control" placeholder="Enter Tasks">
+            <span> <button id="btn" type="button" class="btn btn-primary">Submit</button></span>
+            </div>  
+        </form>
           </div>
           
               <h3 class="text-center">Tasks to do are:-</h3>
        
         <div class="row">
           <ul id="tlist" class="tlist col-8 mx-auto">
-              <li> <input type="checkbox" class="complete" aria-label="Checkbox for following text input">item 1<button class="remove"><span class="fas fa-trash"></span></button></li>
-              <li><input type="checkbox" class="complete" aria-label="Checkbox for following text input">item 2<button class="remove"><span class="fas fa-trash"></span></button></li>
-               <li><input type="checkbox" class="complete" aria-label="Checkbox for following text input">item 3<button class="remove"><span class="fas fa-trash"></span></button></li>
-               <li> <input type="checkbox" class="complete" aria-label="Checkbox for following text input">item 4<button class="remove"><span class="fas fa-trash"></span></button></li>
+              <li> <input type="checkbox" class="complete" ><span class="todoText">item 1</span><input type="text" class="editText"><button type="button" class="update">Update</button><div class="buttons"><button class="edit"><span class="fas fa-edit"></span></button><button class="remove"><span class="fas fa-trash"></span></button></div></li>
+              
+              <li><input type="checkbox" class="complete"><span class="todoText">item 2</span><input type="text" class="editText"><button type="button" class="update">Update</button><div class="buttons"><button class="edit"><span class="fas fa-edit"></span></button><button class="remove"><span class="fas fa-trash"></span></button></div></li>
+              
+              <li><input type="checkbox" class="complete"><span class="todoText">item 3</span><input type="text" class="editText"><button type="button" class="update">Update</button><div class="buttons"><button class="edit"><span class="fas fa-edit"></span></button><button class="remove"><span class="fas fa-trash"></span></button></div></li>
+              
+              <li> <input type="checkbox" class="complete"><span class="todoText">item 4</span><input type="text" class="editText"><button type="button" class="update">Update</button><div class="buttons"><button class="edit"><span class="fas fa-edit"></span></button><button class="remove"><span class="fas fa-trash"></span></button></div></li>
             </ul>
           </div>  
     </div>

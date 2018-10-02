@@ -3,32 +3,61 @@ $(document).ready(function(){
     $('#btn').on('click',addItem);
     $('#tlist').on('change','.complete',completeItem);
     $('#tlist').on('click','.remove',removeItem);
+    $('#tlist').on('click','.edit',editItem);
+    $('#tlist').on('click','.update',updateItem);
     
-    function addItem(){
+    $('#input').on('keypress',function(event){
+        if(event.which === 13){
+            addItem();
+            event.preventDefault();
+        }
+    });
+})
+    
+    function addItem(event){
         var input= $('#input').val();
         if(input ==="")
              {
                  alert("Must enter some task!");
              }
         else{ 
-                $('#tlist').append('<li><input class="complete" type="checkbox">' + input + '<button class="remove"><span class="fas fa-trash"></span></button></li>');
+                $('#tlist').append('<li><input class="complete" type="checkbox"><span class="todoText">' + input + '</span><input type="text" class="editText"><button type="button" class="update">Update</button><div class="buttons"><button class="edit"><span class="fas fa-edit"></span></button><button class="remove"><span class="fas fa-trash"></span></button></div></li>');
                  $('#input').val(""); 
             }
             
     }
-    function removeItem()
+    
+
+    function removeItem(event)
     {
-        $(this).parent().remove();
+        $(this).parent().parent().remove();
         alert("Item deleted");
     }
     
-    function completeItem()
+    function completeItem(event)
     {
         $(this).parent().toggleClass('checked');
     }
-  })
+    
+     function editItem(event)
+    {
+        
+        var currentText=$('.todoText').text();
+        $('.editText').val(currentText);
+        $('.editText').show();
+        $('.update').show();
+        
+    }
+    function updateItem(event)
+    {
+        var changedText=$('.editText').text();
+        $('.todoText').val(changedText);
+        $('.editText').hide();
+        $('.update').hide();
+    }
   
-  /*
+  
+ /*
 
 document.getElementById('btn').addEventListener('click',function(){
  var value=document.getElementById('input').value;
@@ -38,7 +67,7 @@ document.getElementById('btn').addEventListener('click',function(){
     
 })
 
-/*
+
 
     var form=document.getElementById("form");
     var input=document.getElementById("input");
