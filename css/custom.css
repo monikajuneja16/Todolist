@@ -73,34 +73,17 @@ ul.tlist li .buttons button{
     position:relative;
     cursor:pointer;
 }
-ul.tlist li .buttons button:last-of-type:before{
-    content: :'';
-    width:1px;
-    height:30 px;
-    position:absolute;
-    top:10px;
-    left:0;
-}
+
 ul.tlist li .buttons button.remove:hover{
     color:red;
 }
-ul.tlist li .buttons button.edit:hover{
-    color:blue;
-}
-#navbarDropdown
-{
-    float: right;
-}
 
 .remove{
-    
-    float:right;
-    
+    float:right;   
 }
 
 input[type=checkbox]
 {
-    /*float:right;*/
     height:20px;
     width: 20px;
     border: 1px solid white;
@@ -112,7 +95,9 @@ ul li.checked{
  
 }
 .update{
+    background: green;
     margin:5px;
+    color: aliceblue;
 }
 .editText, .update{
     display: none;
